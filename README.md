@@ -13,7 +13,7 @@ Esse projeto foi desenvolvido com o objetivo de praticar conceitos fundamentais 
 
 ## Tecnologias utilizadas
 
-- Java 17
+- Java 23
 - Spring Boot
 - Spring Web
 - Spring Data JPA
