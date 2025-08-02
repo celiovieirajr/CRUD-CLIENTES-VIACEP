@@ -4,21 +4,20 @@ import com.example.demo.dto.ClienteRequest;
 import com.example.demo.dto.ClienteResponse;
 import com.example.demo.model.Cliente;
 import com.example.demo.repository.ClienteRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
 @Service
 public class ClienteService {
 
     private final ClienteRepository clienteRepository;
-
-    public ClienteService(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
 
 
     public ClienteResponse criarCliente(ClienteRequest request) {
@@ -47,7 +46,7 @@ public class ClienteService {
 
         model.setNome(request.getNome());
         model.setEndereco(request.getEndereco());
-        model.setDataAtualizacao(request.getDataAtualizacao());
+        model.setDataAtualizacao(new Timestamp(System.currentTimeMillis()));
 
         Cliente clienteAtualizado = clienteRepository.save(model);
 
@@ -65,7 +64,7 @@ public class ClienteService {
 
     private Cliente toModel(ClienteRequest request) {
         Cliente model = new Cliente();
-        model.setDataAtualizacao(request.getDataAtualizacao());
+        model.setDataAtualizacao(new Timestamp(System.currentTimeMillis()));
         model.setNome(request.getNome());
         model.setEndereco(request.getEndereco());
 
