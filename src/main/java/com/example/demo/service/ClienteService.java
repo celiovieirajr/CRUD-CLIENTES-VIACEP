@@ -76,7 +76,6 @@ public class ClienteService {
         response.setId(model.getId());
         response.setEndereco(model.getEndereco());
         response.setNome(model.getNome());
-        response.setDataAtualizacao(model.getDataAtualizacao());
 
         return response;
     }

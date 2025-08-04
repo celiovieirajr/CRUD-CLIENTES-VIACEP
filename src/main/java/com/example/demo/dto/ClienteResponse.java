@@ -12,7 +12,6 @@ public class ClienteResponse {
 
     private long id;
     private String nome;
-    private Timestamp dataAtualizacao;
     private ViaCep endereco;
 
 }
