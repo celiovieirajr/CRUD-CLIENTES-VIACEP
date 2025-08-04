@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
 @AllArgsConstructor
-public class ViaCepService {
+public class ViaCepGetCep {
 
     private final WebClient webClient;
 

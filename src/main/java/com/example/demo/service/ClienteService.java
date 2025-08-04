@@ -36,12 +36,13 @@ public class ClienteService {
     public ClienteResponse listaClientePorId(Long id) {
         return clienteRepository.findById(id)
                 .map(this::toResponse)
-                .orElse(null);
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não foi encontrado"));
     }
+
 
     public ClienteResponse atualizarCliente(Long id, ClienteRequest request) {
         Cliente model = clienteRepository.findById(id).orElseThrow(() ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado")
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado pelo ID: " + id)
         );
 
         model.setNome(request.getNome());
@@ -55,7 +56,7 @@ public class ClienteService {
 
     public void deletarCliente(Long id) {
         Cliente clienteId = clienteRepository.findById(id).orElseThrow(() ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado")
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado pelo ID: " + id)
         );
 
         clienteRepository.delete(clienteId);

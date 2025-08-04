@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.dto.ClienteRequest;
 import com.example.demo.dto.ClienteResponse;
 import com.example.demo.service.ClienteService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
