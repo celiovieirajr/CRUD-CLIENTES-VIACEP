@@ -36,7 +36,7 @@ public class ClienteService {
     public ClienteResponse listaClientePorId(Long id) {
         return clienteRepository.findById(id)
                 .map(this::toResponse)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não foi encontrado"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não foi encontrado" + id));
     }
 
 
