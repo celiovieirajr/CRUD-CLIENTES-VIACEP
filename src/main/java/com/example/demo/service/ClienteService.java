@@ -41,7 +41,7 @@ public class ClienteService {
 
     public ClienteResponse atualizarCliente(Long id, ClienteRequest request) {
         Cliente model = clienteRepository.findById(id).orElseThrow(() ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Livro não encontrado")
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado")
         );
 
         model.setNome(request.getNome());
@@ -55,7 +55,7 @@ public class ClienteService {
 
     public void deletarCliente(Long id) {
         Cliente clienteId = clienteRepository.findById(id).orElseThrow(() ->
-                new ResponseStatusException(HttpStatus.NOT_FOUND, "Livro não encontrado")
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado")
         );
 
         clienteRepository.delete(clienteId);
