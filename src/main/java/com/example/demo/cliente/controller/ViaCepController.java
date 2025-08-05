@@ -1,7 +1,7 @@
-package com.example.demo.web.controller;
+package com.example.demo.cliente.controller;
 
-import com.example.demo.ingestion.ViaCepWebClient;
-import com.example.demo.model.ViaCep;
+import com.example.demo.viacep.ViaCepWebClient;
+import com.example.demo.cliente.model.ViaCep;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.cliente.model;
 
 import jakarta.persistence.Embeddable;
 import lombok.Getter;
@@ -22,8 +22,5 @@ public class ViaCep {
     private String gia;
     private String ddd;
     private String siafi;
-<<<<<<< HEAD
-=======
 
->>>>>>> beaf508c110cf88d88e9acf7758970ce30a29b41
 }

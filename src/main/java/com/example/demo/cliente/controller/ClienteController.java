@@ -1,8 +1,8 @@
-package com.example.demo.web.controller;
+package com.example.demo.cliente.controller;
 
-import com.example.demo.service.ClienteService;
-import com.example.demo.web.dto.ClienteRequestDto;
-import com.example.demo.web.dto.ClienteResponseDto;
+import com.example.demo.cliente.service.ClienteService;
+import com.example.demo.cliente.dto.ClienteRequestDto;
+import com.example.demo.cliente.dto.ClienteResponseDto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +22,7 @@ public class ClienteController {
 
     @GetMapping
     public List<ClienteResponseDto> listarClienteController() {
-        return clienteService.listarClientes();
+        return clienteService.listarCliente();
     }
 
     @GetMapping("{id}")
